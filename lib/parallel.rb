@@ -32,6 +32,8 @@ module Parallel
       if exception.instance_variable_defined? :@__better_errors_bindings_stack
         exception.send :remove_instance_variable, :@__better_errors_bindings_stack
       end
+      
+      exception.bindings.clear
 
       @exception =
         begin
